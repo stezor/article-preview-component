@@ -1,31 +1,21 @@
-const sharePopupEl = document.querySelector(
-  ".article-component__text__author__info__share-popup"
-);
-const shareShowBtnEl = document.querySelector(
-  ".article-component__text__author__info__share-btn--light"
-);
-const shareHideBtnEl = document.querySelector(
-  ".article-component__text__author__info__share-btn--dark"
-);
+const sharePopupEl = document.querySelector(".author__info__share-popup");
+const shareShowBtnEl = document.querySelectorAll(".author__info__share-btn")[0];
+const shareHideBtnEl = document.querySelectorAll(".author__info__share-btn")[1];
 
 const showSharePopup = false;
 
 const showPopup = () => {
-  sharePopupEl.classList.add(
-    "article-component__text__author__info__share-popup--show"
-  );
-  sharePopupEl.classList.remove(
-    "article-component__text__author__info__share-popup--hide"
-  );
+  sharePopupEl.classList.add("author__info__share-popup--show");
+  sharePopupEl.classList.remove("author__info__share-popup--hide");
+  shareShowBtnEl.classList.remove("author__info__share-btn--light");
+  shareShowBtnEl.classList.add("author__info__share-btn--dark");
 };
 
 const hidePopup = () => {
-  sharePopupEl.classList.add(
-    "article-component__text__author__info__share-popup--hide"
-  );
-  sharePopupEl.classList.remove(
-    "article-component__text__author__info__share-popup--show"
-  );
+  sharePopupEl.classList.add("author__info__share-popup--hide");
+  sharePopupEl.classList.remove("author__info__share-popup--show");
+  shareShowBtnEl.classList.remove("author__info__share-btn--dark");
+  shareShowBtnEl.classList.add("author__info__share-btn--light");
 };
 
 if (showSharePopup) {

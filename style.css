@@ -68,36 +68,36 @@ main {
   gap: 1rem;
 }
 
-.article-component__text__author__photo {
+.author__photo {
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.article-component__text__author__photo img {
+.author__photo img {
   height: 100%;
 }
 
-.article-component__text__author__info {
+.author__info {
   flex-grow: 1;
 }
 
-.article-component__text__author__info p {
+.author__info p {
   margin: 0;
 }
 
-.article-component__text__author__info p:first-of-type {
+.author__info p:first-of-type {
   margin-bottom: 0.25rem;
   font-weight: 800;
   color: var(--very-dark-grayish-blue);
 }
 
-.article-component__text__author__info p:last-of-type {
+.author__info p:last-of-type {
   color: var(--grayish-blue);
 }
 
-.article-component__text__author__info__share-btn {
+.author__info__share-btn {
   outline: none;
   height: 2rem;
   width: 2rem;
@@ -106,17 +106,26 @@ main {
   padding: 0.5rem;
   background: none;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.article-component__text__author__info__share-btn--light {
+.author__info__share-btn--light {
   background-color: var(--light-grayish-blue);
 }
 
-.article-component__text__author__info__share-btn--dark {
+.author__info__share-btn--light svg {
+  fill: var(--very-dark-grayish-blue);
+}
+
+.author__info__share-btn--dark {
   background-color: var(--desaturated-dark-blue);
 }
 
-.article-component__text__author__info__share-popup {
+.author__info__share-btn--dark svg {
+  fill: var(--light-grayish-blue);
+}
+
+.author__info__share-popup {
   position: absolute;
   top: 0;
   left: -2rem;
@@ -130,26 +139,26 @@ main {
   transition: transform 0.15s linear;
 }
 
-.article-component__text__author__info__share-popup--show {
+.author__info__share-popup--show {
   pointer-events: all;
   transform: scale(1);
   transform-origin: bottom center;
 }
 
-.article-component__text__author__info__share-popup--hide {
+.author__info__share-popup--hide {
   pointer-events: none;
   transform: scale(0);
   transform-origin: bottom center;
 }
 
-.article-component__text__author__info__share-popup > span:first-of-type {
+.author__info__share-popup > span:first-of-type {
   flex-grow: 1;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.article-component__text__author__info__share-popup > span:first-of-type > p {
+.author__info__share-popup > span:first-of-type > p {
   margin: 0;
   color: var(--grayish-blue);
   text-transform: uppercase;
@@ -181,7 +190,7 @@ main {
     padding: 2rem;
   }
 
-  .article-component__text__author__info__share-popup {
+  .author__info__share-popup {
     top: -5rem;
     right: -6.7rem;
     left: unset;
@@ -189,7 +198,7 @@ main {
     border-radius: 1rem;
   }
 
-  .article-component__text__author__info__share-popup::after {
+  .author__info__share-popup::after {
     position: absolute;
     bottom: -0.5rem;
     left: calc(50% - 0.5rem);
@@ -202,7 +211,7 @@ main {
     border-top: 0.5rem solid var(--very-dark-grayish-blue);
   }
 
-  .article-component__text__author__info__share-btn--dark {
+  .author__info__share-popup > .author__info__share-btn--dark {
     display: none;
   }
 }
